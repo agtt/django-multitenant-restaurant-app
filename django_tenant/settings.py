@@ -150,6 +150,7 @@ TENANT_APPS = (
     # The following Django contrib apps must be in TENANT_APPS
     'django.contrib.contenttypes',
     'django.contrib.auth',
+    'apps.product',
 )
 
 TENANT_MODEL = "customers.Client"  # app.Model
@@ -159,6 +160,7 @@ DEFAULT_FILE_STORAGE = 'tenant_schemas.storage.TenantFileSystemStorage'
 INSTALLED_APPS = (
     'tenant_schemas',
     'customers',
+    'apps.product',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
