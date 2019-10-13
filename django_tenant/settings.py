@@ -25,7 +25,7 @@ DATABASES = {
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['localhost', '.trendy-sass.com', '.my-domain.com','.site.com']
+ALLOWED_HOSTS = ['localhost', '.trendy-sass.com', '.my-domain.com','.site.com','127.0.0.1']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -93,7 +93,7 @@ DATABASE_ROUTERS = (
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 MIDDLEWARE = (
-    'tenant_tutorial.middleware.TenantTutorialMiddleware',
+    'django_tenant.middleware.TenantTutorialMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -103,11 +103,11 @@ MIDDLEWARE = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'tenant_tutorial.urls_tenants'
-PUBLIC_SCHEMA_URLCONF = 'tenant_tutorial.urls_public'
+ROOT_URLCONF = 'django_tenant.urls_tenants'
+PUBLIC_SCHEMA_URLCONF = 'django_tenant.urls_public'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'tenant_tutorial.wsgi.application'
+WSGI_APPLICATION = 'django_tenant.wsgi.application'
 
 TEMPLATES = [
     {
