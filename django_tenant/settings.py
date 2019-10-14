@@ -151,6 +151,9 @@ TENANT_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.auth',
     'apps.product',
+    'apps.menu',
+    'apps.restaurant',
+    'apps.table',
 )
 
 TENANT_MODEL = "customers.Client"  # app.Model
@@ -161,6 +164,9 @@ INSTALLED_APPS = (
     'tenant_schemas',
     'customers',
     'apps.product',
+    'apps.menu',
+    'apps.restaurant',
+    'apps.table',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

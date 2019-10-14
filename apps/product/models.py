@@ -35,9 +35,9 @@ class Product(models.Model):
     code = models.CharField(max_length=512, verbose_name="Code")
     barcode = models.CharField(max_length=64, verbose_name="Barcode")
     brand = models.ForeignKey(Brand, null=True, blank=True, on_delete=models.SET_NULL, related_name="product_brand",
-                              verbose_name="Marka")
+                              verbose_name="Brand")
     description = models.TextField(null=True, blank=True, verbose_name="Açıklama")
-    weight = models.CharField(max_length=512, verbose_name="Ağırlık")
+    weight = models.CharField(max_length=512, verbose_name="Ağırlık",blank=True,null=True)
     categories = models.ManyToManyField(Category, blank=True, related_name="product_categories",
                                         verbose_name="Kategoriler")
     # Fiyat
@@ -46,9 +46,6 @@ class Product(models.Model):
     special_price = models.FloatField(default=0, verbose_name="Special Price")
     vat = models.FloatField(default=8, verbose_name="VAT")
     currency = models.IntegerField(choices=CURRENCY, default=1, verbose_name="Currency")
-
-    stock_tracking = models.IntegerField(choices=STOCK_TRACKING, default=1, verbose_name="Stokar takip edilsinmi")
-    qty_alert = models.IntegerField(blank=True, null=True, verbose_name="Stok Uyarısı")
     created_at = models.DateTimeField(auto_now_add=True)
     # son guncelleme zamani
     updated_at = models.DateTimeField(auto_now=True)
